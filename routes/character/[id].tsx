@@ -25,6 +25,9 @@ const Page = (props: PageProps<Data>) => {
     return (
         <div>
             <h1>{character.name}</h1>
+            <p>{character.gender}</p>
+            <p>{character.species}</p>
+            <p>{character.status}</p>
         </div>
     )
 }

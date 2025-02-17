@@ -1,7 +1,10 @@
 
 export type Character = {
   id: number,
-  name: string
+  name: string,
+  status: string,
+  species: string,
+  gender: string
 }
 type Data = {
   results: Character[]
@@ -19,7 +22,7 @@ export default async function Home() {
   return (
     <div>
       <h1>Personajes de Rick & Morty</h1>
-      <ul>
+      <ul style="list-style-type: none;">
         {character.results.map(e => <li>{e.name}</li>)}
       </ul>
     </div>
