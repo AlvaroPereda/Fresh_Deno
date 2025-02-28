@@ -25,7 +25,7 @@ export default async function Home() {
     <div id="main">
       <h1>Personajes de Rick & Morty</h1>
       <div id="almacen">
-        {character.results.map(e => <Personaje results={e}/>)}
+        {character.results.map(e => <Personaje key={e.id} results={e}/>)}
       </div>
     </div>
   );
