@@ -22,6 +22,9 @@ h1 {
   justify-content: center;
   flex-wrap: wrap;
   margin: 10px;
+  img {
+    border-radius: 50%;
+  }
 }
 
 
