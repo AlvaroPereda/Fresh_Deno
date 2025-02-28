@@ -1,10 +1,12 @@
+import { Personaje } from "../components/Personaje.tsx"
 
 export type Character = {
   id: number,
   name: string,
   status: string,
   species: string,
-  gender: string
+  gender: string,
+  image: string
 }
 type Data = {
   results: Character[]
@@ -20,11 +22,11 @@ const getCharacter = async() => {
 export default async function Home() {
   const character:Data = await getCharacter()
   return (
-    <div>
+    <div id="main">
       <h1>Personajes de Rick & Morty</h1>
-      <ul style="list-style-type: none;">
-        {character.results.map(e => <li>{e.name}</li>)}
-      </ul>
+      <div id="almacen">
+        {character.results.map(e => <Personaje results={e}/>)}
+      </div>
     </div>
   );
 }

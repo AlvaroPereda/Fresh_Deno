@@ -5,7 +5,30 @@ h1 {
   color: white;
   text-align: center;
 }
-div {
+#main {
+  display: flex;
   color: white;
   text-align: center;
+  align-items: center;
+  flex-direction: column; 
+}
+
+#character {
+  width: 150px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 10px;
+}
+
+
+#almacen {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap
 }
