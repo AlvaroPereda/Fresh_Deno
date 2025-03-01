@@ -21,7 +21,7 @@ export const handler: Handlers = {
 
 const Page = (props: PageProps<Data>) => {    
     const { character } = props.data
-
+    debugger
     return (
         <div>
             <h1>{character.name}</h1>
