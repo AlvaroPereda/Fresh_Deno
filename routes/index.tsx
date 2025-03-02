@@ -1,3 +1,4 @@
+import NextId from "../components/NextId.tsx";
 import { Personaje } from "../components/Personaje.tsx"
 
 export type Character = {
@@ -27,6 +28,7 @@ export default async function Home() {
       <div id="almacen">
         {character.results.map(e => <Personaje key={e.id} results={e}/>)}
       </div>
+      <NextId id = {1}/>
     </div>
   );
 }

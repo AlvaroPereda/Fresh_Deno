@@ -1,11 +1,12 @@
 import { FreshContext, Handlers, PageProps } from "$fresh/server.ts";
+import { Personaje } from "../../components/Personaje.tsx";
 import { Character } from "../index.tsx";
 
 type Data = {
     character: Character
 }
 
-const getCharacter = async(id: string) => {
+export const getCharacter = async(id: string) => {
     const url = `https://rickandmortyapi.com/api/character/${id}`
     const data = await fetch(url)
     return await data.json()
@@ -23,11 +24,8 @@ const Page = (props: PageProps<Data>) => {
     const { character } = props.data
     debugger
     return (
-        <div>
-            <h1>{character.name}</h1>
-            <p>{character.gender}</p>
-            <p>{character.species}</p>
-            <p>{character.status}</p>
+        <div class="personaje_id">
+           <Personaje results={character}/>
         </div>
     )
 }
