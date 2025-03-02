@@ -28,7 +28,7 @@ export default async function Home() {
       <div id="almacen">
         {character.results.map(e => <Personaje key={e.id} results={e}/>)}
       </div>
-      <NextId id = {1}/>
+      <NextId id = {0}/>
     </div>
   );
 }
