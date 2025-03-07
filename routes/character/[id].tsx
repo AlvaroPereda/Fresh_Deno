@@ -1,33 +1,52 @@
 import { FreshContext, Handlers, PageProps } from "$fresh/server.ts";
-import { Personaje } from "../../components/Personaje.tsx";
-import { Character } from "../index.tsx";
+import PersonajeDetallado from "../../components/PersonajeDetallado.tsx";
 
-type Data = {
-    character: Character
+
+type Character = {
+    id: number,
+    name: string,
+    status: string,
+    species: string,
+    gender: string,
+    image: string,
+    origin: {
+      name: string
+    }
+    episode: string[] 
 }
 
-export const getCharacter = async(id: string) => {
+type DataEpisode = {
+    name: string
+}
+
+export const getCharacter = async(id: string):Promise<Character> => {
     const url = `https://rickandmortyapi.com/api/character/${id}`
     const data = await fetch(url)
     return await data.json()
   }
 
+  const getNameEpisode = async(episode: string):Promise<string> => {
+    const data = await fetch(episode)
+    const result:DataEpisode = await data.json()
+    return result.name
+  }
+
+
 export const handler: Handlers = {
-    GET: async(_req: Request, ctx: FreshContext<unknown, Data>) => {
+    GET: async(_req: Request, ctx: FreshContext<unknown, Character>) => {
        const { id } = ctx.params
+       try{
        const character:Character = await getCharacter(id)
-       return ctx.render({character})
+       character.episode = await Promise.all(character.episode.map((e) => getNameEpisode(e)))
+       return ctx.render({...character})
+       }catch(e) {
+        return new Response("Error " + e)
+       }
     }
 }
 
-const Page = (props: PageProps<Data>) => {    
-    const { character } = props.data
-    debugger
-    return (
-        <div class="personaje_id">
-           <Personaje results={character}/>
-        </div>
-    )
+const Page = (props: PageProps<Character>) => {    
+    return <PersonajeDetallado {...props.data}/>
 }
 
 export default Page

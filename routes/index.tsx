@@ -7,7 +7,11 @@ export type Character = {
   status: string,
   species: string,
   gender: string,
-  image: string
+  image: string,
+  origin: {
+    name: string
+  }
+  episode: string 
 }
 type Data = {
   results: Character[]
