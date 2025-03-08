@@ -1,79 +1,63 @@
 body {
-  background-color: black;
-  color: white;
-}
-h1 {
-  color: white;
-}
-#main {
-  display: flex;
-  color: white;
-  text-align: center;
-  align-items: center;
-  flex-direction: column; 
-}
-
-#character {
-  width: 150px;
-  height: 200px;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin: 10px;
-  img {
-    border-radius: 50%;
-  }
-}
-
-
-#almacen {
-  width: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  flex-wrap: wrap
-}
-
-.personaje_id {
-  display: flex;
-  flex-direction: row;
-}
-
-.buttons_next {
-  width: 50%;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-direction: row;
-  button{
-    background-color: transparent;
+    background-color: black;
     color: white;
-    font-size: larger;
-  }
 }
 
-.characters {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
+#index {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    text-align: center;
+    padding: 20px 25% 0px;
+    gap: 40px;
+    h1 {
+        width: 100%;
+    }
+    img {
+        border-radius: 50%;
+    }
 }
 
-.personaje_detallado {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: start;
-  padding: 20px;
-  gap: 10px;
+.character_container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    img {
+        border-radius: 25%;
+    }
+    ul {
+        list-style: none;
+    }
+    .character_data {
+        display: flex;
+        flex-direction: row;
+    }
+    a {
+        color: white; 
+        text-decoration: none; /* Elimina el subrayado predeterminado */
+    }
+    a:hover {
+        color: #858585; /* Color dorado al hacer hover */
+    }
+    
 }
 
-.personaje_masdetallado {
-  display: flex;
-  flex-direction: row;
-  font-size: large;
-  img {
-    border-radius: 10%;
-  }
+.episode_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.hero {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    h1{
+        width: 90%;
+        text-align: center;
+    }
 }

@@ -4,9 +4,8 @@
 
 import * as $_404 from "./routes/_404.tsx";
 import * as $_app from "./routes/_app.tsx";
-import * as $buenas_name_ from "./routes/buenas/[name].tsx";
 import * as $character_id_ from "./routes/character/[id].tsx";
-import * as $characterid from "./routes/characterid.tsx";
+import * as $episode_id_ from "./routes/episode/[id].tsx";
 import * as $index from "./routes/index.tsx";
 
 import type { Manifest } from "$fresh/server.ts";
@@ -15,9 +14,8 @@ const manifest = {
   routes: {
     "./routes/_404.tsx": $_404,
     "./routes/_app.tsx": $_app,
-    "./routes/buenas/[name].tsx": $buenas_name_,
     "./routes/character/[id].tsx": $character_id_,
-    "./routes/characterid.tsx": $characterid,
+    "./routes/episode/[id].tsx": $episode_id_,
     "./routes/index.tsx": $index,
   },
   islands: {},
