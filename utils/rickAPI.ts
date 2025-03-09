@@ -21,7 +21,7 @@ type DataAPiID = {
     episode: string[]
 }
 
-export type EpisodeAPI = {
+type EpisodeAPI = {
     id: number
     name: string
     air_date: string
@@ -54,8 +54,8 @@ export type EpisodeID = {
     characters: Data[]
 }
 
-export const getCharacter = async():Promise<Data[]> => {
-    const characterAPI = await Axios.get<DataAPi>("https://rickandmortyapi.com/api/character")
+export const getCharacter = async(page:number):Promise<Data[]> => {
+    const characterAPI = await Axios.get<DataAPi>(`https://rickandmortyapi.com/api/character?page=${page}`)
     const character: Data[] = characterAPI.data.results.map(e => e)
     return character
 }
