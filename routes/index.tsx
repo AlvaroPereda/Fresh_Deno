@@ -20,7 +20,7 @@ export default function Home(props:PageProps<{character: Data[], numberPage: num
       <h1>Personaje de Rick & Morty</h1>
       {character.map(e => <Characters key={e.id} {...e}/>)}
       <div id="change">
-        <div class="change_button"><a href={`/?page=${ numberPage - 1 < 1? 1:numberPage-1}`}>Previus</a></div>
+        <div class="change_button"><a href={`/?page=${ numberPage - 1 < 1? 1:numberPage-1}`}>Previous</a></div>
         <div class="change_button"><a href={`/?page=${numberPage + 1}`}>Next</a></div>
       </div>
     </div>
