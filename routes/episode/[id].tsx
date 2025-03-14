@@ -15,8 +15,6 @@ export const handler:Handlers = {
     }
 }
 
-const Page = (props:PageProps<EpisodeID>) => {
-    return <Episode {...props.data}/>
-}
+const Page = (props:PageProps<EpisodeID>) => <Episode {...props.data}/>
 
 export default Page

@@ -10,8 +10,6 @@ export const handler:Handlers = {
     }
 }
 
-const Page = (props:PageProps<DataID>) => {
-    return <Character {...props.data}/>
-}
+const Page = (props:PageProps<DataID>) => <Character {...props.data}/>
 
 export default Page
